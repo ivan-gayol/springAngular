@@ -1,0 +1,11 @@
+{
+  "name": "ng-spring-boot",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-bootstrap": "^2.0.0",
+    "angular-resource": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-smart-table": "^2.1.8"
+  }
+}

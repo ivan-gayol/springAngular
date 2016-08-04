@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"
+	href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body ng-app="userModule">
+	<div class="container" ng-controller="userCtrl">
+	
+		<div class="page-header">
+			<h1>User List</h1>
+		</div>
+		
+		<div class="alert alert-info" role="alert" ng-hide="users && users.length > 0">
+			There are no Users yet.
+		</div>
+
+		<button type="button" ng-click="openAddUserModal('sm')" class="btn btn-sm btn-success">
+		<i class="glyphicon glyphicon-plus">
+		</i> Add User
+		</button>
+
+		<table st-table="displayedCollection" st-safe-src="users"
+			class="table table-striped">
+			<thead>
+				<tr>
+					<th st-sort="firstName">First Name</th>
+					<th st-sort="lastName">Last Names</th>
+				</tr>
+				<tr>
+					<th colspan="5"><input st-search="" class="form-control"
+						placeholder="global search ..." type="text" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in displayedCollection">
+					<td>{{user.firstName}}</td>
+					<td>{{user.lastNames}}</td>
+					<td>
+						<button class="pull-right btn btn-success" type="button"
+							title="Update" ng-click="updateUserModal('sm', user)">
+							<span class="glyphicon glyphicon-edit"></span>
+						</button>
+
+						<button class="pull-right btn btn-danger" type="button"
+							title="Delete" ng-click="deleteUser(user)">
+							<span class="glyphicon glyphicon-trash"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- GENERAL MODULES -->
+	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-resource/angular-resource.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	
+	<!-- USERS MODULES -->
+	<script type="text/javascript" src="./app/users/services/services.js"></script>
+	<script type="text/javascript" src="./app/users/controllers/addUserModalCtrl.js"></script>
+	<script type="text/javascript" src="./app/users/controllers/updateUserModalCtrl.js"></script>
+	<script type="text/javascript" src="./app/users/controllers/controllers.js"></script>
+	
+	<script type="text/javascript" src="./app/app.js"></script>
+</body>
+</html>
