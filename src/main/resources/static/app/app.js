@@ -1,11 +1,7 @@
 "use strict";
 
-angular.module('userModule', ['ngResource',
-                              'smart-table',
-                              'ui.bootstrap',
-                              'ngRoute',
-                              'userSrvcModule',
-                              'addUserModalCtrlModule',
-                              'updateUserModalCtrlModule',
-                              'userCtrlModule'
-                              ]);
+angular.module('ecoMovingApp', ['ngResource',
+                                'smart-table',
+                                'ui.bootstrap',
+                                'ngRoute',
+                                'userCtrlModule']);

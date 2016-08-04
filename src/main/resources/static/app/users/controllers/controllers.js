@@ -1,6 +1,8 @@
 "use strict";
 
-var ctrlModule = angular.module('userCtrlModule',[]);
+var ctrlModule = angular.module('userCtrlModule',['userSrvcModule',
+                                                  'addUserModalCtrlModule',
+                                                  'updateUserModalCtrlModule']);
 
 ctrlModule.controller ('userCtrl',['$scope',
                                    'usersFactory',

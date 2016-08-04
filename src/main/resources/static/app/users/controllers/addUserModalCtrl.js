@@ -1,6 +1,6 @@
 "use strict";
 
-var ctrlModule = angular.module('addUserModalCtrlModule',[]);
+var ctrlModule = angular.module('addUserModalCtrlModule',['userSrvcModule']);
 
 /**
  * Controller for the  add user modal window.
